@@ -22,8 +22,8 @@ window.addEventListener('mousemove', function (event) {
 
 // ctx styles
 ctx.fillStyle = '#F9C011';
-ctx.font = '20px Verdana';
-ctx.fillText('#MADBEE', 0, 30);
+ctx.font = '10px Verdana';
+ctx.fillText('#HOVER HERE', 0, 30);
 const text = ctx.getImageData(0, 0, 100, 100);
 
 // class
@@ -83,7 +83,7 @@ function init() {
             if (text.data[(y * 4 * text.width) + (x * 4) + 3] > 128) {
                 let positionX = x + adjustX;
                 let positionY = y + adjustY;
-                particleArray.push(new Particle(positionX * 13, positionY * 13));
+                particleArray.push(new Particle(positionX * 10, positionY * 10));
             }
         }
     }
@@ -93,7 +93,7 @@ init();
 // animation here
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let i = 0; i < 612; i++) {
+    for (let i = 0; i < 220; i++) {
         particleArray[i].draw();
         particleArray[i].update();
     }
